@@ -64,7 +64,7 @@ function estaEnRango(num) {
     return false;
   }
 }
-//                 6.2
+//                0.8
 function esEntero(num) {
   // Retornar true si "num" es un entero, ya sea positivo, negativo o cero.
   // Ejemplo: 0.8   ---> false
@@ -72,11 +72,7 @@ function esEntero(num) {
   // Ejemplo: (-10) ---> true
   // De lo contrario, retorna false.
   // Tu código:
-  if (num === Math.floor(num)) {
-    return true;
-  } else {
-    return false;
-  }
+  return Number.isInteger(num);
 }
 
 function fizzBuzz(num) {
@@ -95,7 +91,7 @@ function fizzBuzz(num) {
     return false;
   }
 }
-
+//
 function operadoresLogicos(num1, num2, num3) {
   // La función recibe tres números distintos.
   // Si num1 es mayor a num2 y a num3, y además es positivo, retornar ---> "Numero 1 es mayor y positivo".
@@ -104,15 +100,14 @@ function operadoresLogicos(num1, num2, num3) {
   // Si todos los argumentos son cero, retornar ---> "Error".
   // Si no se cumple ninguna de las condiciones anteriores, retornar false.
   // Tu código:
-
   if (num1 === 0 && num2 === 0 && num3 === 0) {
     return "Error";
   } else if (num1 < 0 || num2 < 0 || num3 < 0) {
     return "Hay negativos";
-  } else if (num1 > num2 && num1 > num3 && num1 > 0) {
+  } else if (num1 > num2 && num1 > num3) {
     return "Numero 1 es mayor y positivo";
   } else if (num3 > num1 && num3 > num2) {
-    return num3;
+    return num3 + 1;
   } else {
     return false;
   }
