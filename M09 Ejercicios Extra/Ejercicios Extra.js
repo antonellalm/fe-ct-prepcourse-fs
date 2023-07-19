@@ -47,8 +47,15 @@ function sortArray(arrayOfStrings) {
   // Recibes un arreglo de strings.
   // Debe retornar un nuevo arreglo, pero con las palabras ordenadas en orden creciente a partir
   // de la longitud de cada string.
-  // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
+  // [EJEMPLO]: ["You", "are","looking",the","beautiful", ]  ---> [“You", "are", //
+  //               3     3        7       3        9
+  //                                            a     b
+  //"looking", "beautiful"]
   // Tu código:
+
+  return arrayOfStrings.sort(function (a, b) {
+    return a.length - b.length;
+  });
 }
 
 // sort:
@@ -68,6 +75,15 @@ function buscoInterseccion(array1, array2) {
   // Si no tienen elementos en común, retornar un arreglo vacío.
   // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
   // Tu código:
+  var interseccion = [];
+  for (var i = 0; i < array1.length; i++) {
+    for (var j = 0; j < array2.length; j++) {
+      if (array1[i] === array2[j]) {
+        interseccion.push(array1[i]);
+      }
+    }
+  }
+  return interseccion;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
